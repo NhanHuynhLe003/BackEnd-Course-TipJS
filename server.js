@@ -1,6 +1,6 @@
 const app = require('./src/app.js')
 
-const port = 8080
+const {app: {port}} = require('./src/configs/configs.mongodb.js')
 
 const server = app.listen(port, () => {
 	console.log(`app listening on http://localhost:${port}/`)
