@@ -7,17 +7,19 @@ const { checkOverload } = require("./helpers/checkConnection");
 
 const app = express();
 
+
 //init middewares
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(compression());
+app.use(express.urlencoded({
+    extended: true
+}))
 //init db
 initMongoDb
 // checkOverload();
 //init routes
-app.get('/' , (req,res,next) => {
-    return res.status(200).send("Hello World 123")
-})
+app.use("/", require('./routes'));
 //handling error
 
 module.exports = app;

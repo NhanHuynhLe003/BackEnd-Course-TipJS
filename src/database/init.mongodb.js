@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 const { countConnect } = require("../helpers/checkConnection");
 
-const connectStr = `mongodb://localhost:27017/e-comerce-database`;
+const connectStr = `mongodb://localhost:27017/shopDEV`;
 
 class Database {
   constructor() {
